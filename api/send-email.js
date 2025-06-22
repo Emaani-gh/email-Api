@@ -10,7 +10,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(
   cors({
-    origin: "http://localhost:3001", // allow your frontend
+    origin: process.env.FRONTEND_URL,
   })
 );
 app.use(express.json());
@@ -20,8 +20,8 @@ app.post("/send-email", async (req, res) => {
 
   try {
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "abdulsalamseidu22@yahoo.com",
+      from: process.env.FROM_EMAIL,
+      to: process.env.TO_EMAIL,
       subject: "message from portfolio site",
       html: `
         <p><strong>Name:</strong> ${name}</p>
