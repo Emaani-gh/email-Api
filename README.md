@@ -35,4 +35,7 @@ A simple Node.js-based email-sending API using **Resend**. This service allows f
 3. **create .env file**
    ```bash
    RESEND_API_KEY=
+   FRONTEND_URL=
+   FROM_EMAIL=
+   TO_EMAIL=
    ```
